@@ -1,0 +1,20 @@
+{
+  "name": "Node_Angular_Express_REST",
+  "version": "0.0.1",
+  "description": "Beginning of a restful framework",
+  "author": "Mike Hannon <mjhannon@gmail.com>",
+  "contributors": [],
+  "https://github.com/nodejitsu/browsenpm.org"
+  "bugs": {
+  "url": "https://github.com/nodejitsu/browsenpm.org/issues"
+  },
+  "keywords": [
+  "REST",
+  "Angular"
+],
+  "dependencies": {
+    "body-parser": "*",
+    "express": "4.2.x",
+  },
+  "license": "MIT"
+}

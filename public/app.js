@@ -1,6 +1,7 @@
 console.log("angular module");
 var app = angular.module("app", [])
 .controller('MyController', ['$scope','dataFactory', function ($scope, dataFactory) {
+  console.log('hello, I am controller');
   dataFactory.set_path('users');
   $scope.y = {name: "mike"};
   $scope.data_set = dataFactory.return_data;
@@ -13,15 +14,16 @@ var app = angular.module("app", [])
   $scope.show_button = function(id){dataFactory.show(id);}
  }])
 .factory('dataFactory', ['$http', function($http) {
+  console.log('hello I am a service');
   var that = this;
   var urlBase = '/api/';
-  var return_data = { index : "index",
-                      show:   "show",
+  var return_data = { index : "index", //JSON with all users
+                      show:   "show", //JSON read 1
                       create: "create",
-                      edit:   "edit",
-                      update: "update",
+                      edit:   "edit", // load a view
+                      update: "update", // does the db stuff
                       delete: "delete",
-                      new:    "new",
+                      new:    "new", //
                       errors: "errors"
                     };
 

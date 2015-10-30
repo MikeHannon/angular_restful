@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <title>Document</title>
+  <script src = "app.js"></script>
+</head>
+<body ng-app = "app">
+
+  <div id="simple" ng-controller="MyController">
+    <button ng-click = "index_button()">index button</button>
+    <button ng-click = "create_button({id:6})">create button</button>
+    <button ng-click = "new_button()">new button</button>
+    <button ng-click = "show_button(6)">show button</button>
+    <button ng-click = "update_button({id:6})">update button</button>
+    <button ng-click = "edit_button(6)">edit button</button>
+    <button ng-click = "delete_button(6)">delete button</button>
+    <p>Let's try this simple notify service, injected into the controller...</p>
+    <input ng-init="message='test'" ng-model="message" >
+    <button ng-click="callNotify(message);">NOTIFY</button>
+    <p>(you have to click 3 times to see an alert)</p>
+  <div ng-html-compile = "data_set.index" ></div>
+  <div ng-html-compile = "data_set.new" ></div>
+  <div ng-html-compile = "data_set.create" ></div>
+  <div ng-html-compile = "data_set.show" ></div>
+  <div ng-html-compile = "data_set.edit" ></div>
+  <div ng-html-compile = "data_set.update" ></div>
+  <div ng-html-compile = "data_set.delete" ></div>
+  <div ng-html-compile = "data_set.errors" ></div>
+</div>
+
+</body>
+</html>
+[{id:1, name:'chris'}]

@@ -89,7 +89,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, './public')));
 app.listen(8000, function(){});
 
-// Routing Example
+// Routing Example -- build these dynamically!
 
 app.get('/api/users', Users_Controller.index);
 app.get('/api/users/new', Users_Controller.new);

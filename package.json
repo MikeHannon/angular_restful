@@ -5,6 +5,7 @@
   "description": "Beginning of a restful framework",
   "author": "Mike Hannon <mjhannon@gmail.com>",
   "license": "MIT",
+  "contributurs":["Arif Gursel"],
   "keywords": [
     "REST",
     "Angular"

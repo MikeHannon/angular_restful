@@ -4,11 +4,13 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, './public')));
+console.log(app);
 app.listen(8000, function(){});
 
-app.use(express.static(path.join(__dirname, './public')));
-
 app.get('/api/users', function(req,res){
+  console.log("hello");
+
   res.sendFile(path.join(__dirname, './public/users/index.html'));
 });
 

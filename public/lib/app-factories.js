@@ -35,7 +35,7 @@ app.factory('userFactory', ['$http', function($http) {
    },
 
    update: function (user) {
-     $http.put(urlBase + user.ID, user).then(function(response){processData(response,'update')}, errorCallback);
+     $http.put(urlBase + user.id, user).then(function(response){processData(response,'update')}, errorCallback);
    },
 
    delete: function (id) {
@@ -49,7 +49,7 @@ app.factory('userFactory', ['$http', function($http) {
    set_path: function(controller_name){
       urlBase = '/api/'+controller_name+'/';
    },
-   
+
    return_data: return_data
   }
  }]);

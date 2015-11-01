@@ -48,7 +48,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, './public')));
 app.listen(8000, function(){});
-
+// TESTING routing
 app.get('/api/users', function(req,res){
   Users_Controller.index();
   res.sendFile(path.join(__dirname, './public/users/index.html'));
@@ -78,5 +78,18 @@ app.put('/api/users/:id', function(req,res){
 });
 
 app.delete('/api/users/:id', function(req,res){
+  //  Users_Controller.delete(req,res); <-- not implemented yet!
   res.sendFile(path.join(__dirname, './public/users/delete.html'));
 });
+
+//Possible production routing:
+/* --
+app.get('/api/users',   Users_Controller.index);
+app.get('/api/users/new', Users_Controller.new);
+app.get('/api/users/:id/edit', Users_Controller.edit);
+app.get('/api/users/:id', Users_Controller.show);
+app.post('/api/users', Users_Controller.create);
+app.put('/api/users/:id', Users_Controller.update);
+app.delete('/api/users/:id', Users_Controller.delete);
+
+--- */

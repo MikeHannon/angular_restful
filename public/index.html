@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" ng-app = "app">
+<head >
   <meta charset="UTF-8">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script src = "/lib/app.js"></script>
+  <script src = "/lib/app-factories.js"></script>
+  <script src = "/lib/app-controllers.js"></script>
+  <script src = "/lib/app-directives.js"></script>
   <title>Document</title>
-  <script src = "app.js"></script>
 </head>
+
 <body ng-app = "app">
 
   <div id="simple" ng-controller="MyController">
@@ -26,6 +30,7 @@
   <div ng-html-compile = "data_set.delete" ></div>
   <div ng-html-compile = "data_set.errors" ></div>
 </div>
+
 
 </body>
 </html>

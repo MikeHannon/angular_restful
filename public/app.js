@@ -59,7 +59,7 @@ var app = angular.module("app", [])
    },
 
    update: function (cust) {
-     $http.put(urlBase + '/' + cust.ID, cust).then(function(data){
+     $http.put(urlBase + '/' + cust.id, cust).then(function(data){
                           return_data.update = data.data
                         }, function errorCallback(response) {
                           return_data.errors = response

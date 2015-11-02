@@ -4,6 +4,10 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var fs = require('fs');
+//end
+//Custom Dependencies
+var BuildController= require("./server/lib/controller_template.js");
+var routesTemplate = require("./server/lib/routes_template.js")
 var app = express();
 // End
 
@@ -17,13 +21,10 @@ var userSchema = new mongoose.Schema({
 });
 
 var user = mongoose.model('User', userSchema);
-// End
-
-//Example CONTROLLER
 /* Load Model */
 var User = mongoose.model('User');
 // Controller
-var build_controller = require("./server/lib/controller_template.js");
+
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -32,19 +33,11 @@ app.use(express.static(path.join(__dirname, './public')));
 app.listen(8000, function(){});
 
 //restful route builder
-var buildRoutes = function(app, controller){
-  app.get('/api/users', controller.index);
-  app.get('/api/users/new', controller.new);
-  app.get('/api/users/:id/edit', controller.edit);
-  app.get('/api/users/:id', controller.show);
-  app.post('/api/users', controller.create);
-  app.put('/api/users/:id', controller.update);
-  app.delete('/api/users/:id', controller.delete);
-}
+
 //end of route builder
 //CREATE CONTROLLLER and routes (example)
-var Users_Controller = new build_controller(User, "users", ['name']);
-buildRoutes(app, Users_Controller);
+var Users_Controller = new BuildController(User, "users", ['name']);
+routesTemplate(app, Users_Controller);
 //end
 
 

@@ -89,14 +89,19 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, './public')));
 app.listen(8000, function(){});
 
-// Routing Example -- build these dynamically!
+//restful route builder
+var buildRoutes = function(app, controller){
+  app.get('/api/users', controller.index);
+  app.get('/api/users/new', controller.new);
+  app.get('/api/users/:id/edit', controller.edit);
+  app.get('/api/users/:id', controller.show);
+  app.post('/api/users', controller.create);
+  app.put('/api/users/:id', controller.update);
+  app.delete('/api/users/:id', controller.delete);
+}
+//end of route builder
+buildRoutes(app, Users_Controller);
 
-app.get('/api/users', Users_Controller.index);
-app.get('/api/users/new', Users_Controller.new);
-app.get('/api/users/:id/edit', Users_Controller.edit);
-app.get('/api/users/:id', Users_Controller.show);
-app.post('/api/users', Users_Controller.create);
-app.put('/api/users/:id', Users_Controller.update);
-app.delete('/api/users/:id', Users_Controller.delete);
+
 
 // End of Routing

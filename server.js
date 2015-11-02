@@ -81,9 +81,7 @@ var genericController = function(model_name, model_string_name, update_array) {
   } // end of return
 };
 
-//CREATE CONTROLLLER (example)
-var Users_Controller = new genericController(User, "users", ['name']);
-//end
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, './public')));
@@ -100,7 +98,12 @@ var buildRoutes = function(app, controller){
   app.delete('/api/users/:id', controller.delete);
 }
 //end of route builder
+//CREATE CONTROLLLER and routes (example)
+var Users_Controller = new genericController(User, "users", ['name']);
 buildRoutes(app, Users_Controller);
+//end
+
+
 
 
 

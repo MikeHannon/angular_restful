@@ -1,29 +1,28 @@
-// returns what is most appropriate
+//return json objects
 var path = require('path');
 
 module.exports = (function(model_name, model_string_name, update_array) {
     console.log(__dirname);
 
   return {
-    index : function(req, res) {
+    indexjson : function(req, res) {
       model_name.find({}, function(err, data){
         if (err){}
         else {
           console.log(data);
-          res.json({users: data, page: "hello"})
-          //res.sendFile(path.join(__dirname, './../../public/'+model_string_name+'/index.html'));
+          res.sendFile(path.join(__dirname, './../../public/'+model_string_name+'/index.html'));
         }
       })
     }, //end of index
 
-    create : function(req,res){
+    createjson : function(req,res){
       console.log(req.body);
       user = new model_name({name:'mike'}); // TEST CODE
       user.save();
       res.sendFile(path.join(__dirname, './../../public/'+model_string_name+'/create.html'));
     }, // end of create
 
-    show : function(req,res){
+    showjson : function(req,res){
       model_name.findOne({_id:req.params.id}, function (err, user){
         if (err){console.log(err);}
         else {
@@ -33,15 +32,15 @@ module.exports = (function(model_name, model_string_name, update_array) {
       })
     }, //end of show
 
-    edit : function(req,res){
+    editjson : function(req,res){
       res.sendFile(path.join(__dirname, './../../public/'+model_string_name+'/edit.html'));
     }, // end of edit
 
-    new : function(req,res){
+    newjson : function(req,res){
       res.sendFile(path.join(__dirname, './../../public/'+model_string_name+'/new.html'));
     }, // end of new
 
-    update : function(req,res){
+    updatejson : function(req,res){
       //define key value pairs that should be passed to and updated with calls to this method
       var update_object = {};
       for (var i = 0; i < update_array.length; i ++){
@@ -55,7 +54,7 @@ module.exports = (function(model_name, model_string_name, update_array) {
       });
     }, //end of update
 
-    delete : function(req,res){
+    deletejson : function(req,res){
       res.sendFile(path.join(__dirname, './../../public/'+model_string_name+'/delete.html'));
     } //end of delete
   } // end of return

@@ -14,3 +14,9 @@ Arif 11-1-2015 Update
 -- Brought anjular app definition up to the html tag
 -- Moved js files to "/lib" directory
 -- Created empty "MasterClass" for add-ons
+
+Mike 11-1-2015 Update
+=====================
+- Integrated mongoose
+-- restful methods
+-- dynamic generation of restful controller and routes

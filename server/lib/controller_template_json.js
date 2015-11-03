@@ -15,10 +15,9 @@ module.exports = (function(model_name, model_string_name, update_array) {
     }, //end of index
 
     create: function(req,res){
-      console.log(req.body);
       user = new model_name({name:'mike'}); // TEST CODE
       user.save();
-      //res.sendFile(path.join(__dirname, './../../public/'+model_string_name+'/create.html'));
+      res.json({'future':'return errors'});
     }, // end of create
 
     show: function(req,res){
@@ -31,10 +30,11 @@ module.exports = (function(model_name, model_string_name, update_array) {
     }, //end of show
 
     edit: function(req,res){
-      //res.sendFile(path.join(__dirname, './../../public/'+model_string_name+'/edit.html'));
+      res.json({'future':'remove path, and make this a directive'}); './../../public/'+model_string_name+'/edit.html'));
     }, // end of edit
 
     new: function(req,res){
+      res.json({'future':'remove path, and make this a directive'});
       //res.sendFile(path.join(__dirname, './../../public/'+model_string_name+'/new.html'));
     }, // end of new
 
@@ -52,7 +52,7 @@ module.exports = (function(model_name, model_string_name, update_array) {
     }, //end of update
 
     delete: function(req,res){
-    //  res.sendFile(path.join(__dirname, './../../public/'+model_string_name+'/delete.html'));
+    res.json({'future':'delete function here'});
     } //end of delete
   } // end of return
 });

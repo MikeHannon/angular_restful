@@ -5,6 +5,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
   <script src = "/lib/app.js"></script>
   <script src = "/lib/app-factories.js"></script>
+  <script src = "/lib/app-factoriesJSON.js"></script>
   <script src = "/lib/app-controllers.js"></script>
   <script src = "/lib/app-directives.js"></script>
   <title>Document</title>
@@ -20,7 +21,15 @@
     <button ng-click = "update_button({id:'56365167664916df13b34375', name: 'john'})">update button</button>
     <button ng-click = "edit_button('56365167664916df13b34375')">edit button</button>
     <button ng-click = "delete_button('56365167664916df13b34375')">delete button</button>
-  {{data_set.index}}
+
+    <button ng-click = "index_buttonJSON()">index buttonJSON</button>
+    <button ng-click = "create_buttonJSON({name:'mike'})">create buttonJSON</button>
+    <button ng-click = "new_buttonJSON()">new buttonJSON</button>
+    <button ng-click = "show_buttonJSON('56365167664916df13b34375')">show buttonJSON</button>
+    <button ng-click = "update_buttonJSON({id:'56365167664916df13b34375', name: 'john'})">update buttonJSON</button>
+    <button ng-click = "edit_buttonJSON('56365167664916df13b34375')">edit buttonJSON</button>
+    <button ng-click = "delete_buttonJSON('56365167664916df13b34375')">delete buttonJSON</button>
+
   <div ng-html-compile = "data_set.index" ></div>
   <div ng-html-compile = "data_set.new" ></div>
   <div ng-html-compile = "data_set.create" ></div>
@@ -29,6 +38,13 @@
   <div ng-html-compile = "data_set.update" ></div>
   <div ng-html-compile = "data_set.delete" ></div>
   <div ng-html-compile = "data_set.errors" ></div>
+  {{data_setJSON.index}}
+  {{data_setJSON.new}}
+  {{data_setJSON.create}}
+  {{data_setJSON.show}}
+  {{data_setJSON.edit}}
+  {{data_setJSON.update}}
+  {{data_setJSON.delete}}
 </div>
 
 

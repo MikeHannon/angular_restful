@@ -1,4 +1,4 @@
-app.factory('userFactory', ['$http', function($http) {
+app.factory('userFactoryJSON', ['$http', function($http) {
   var that = this;
   var urlBase = '/api/';
   var return_data = { index : "index",      //JSON with all users
@@ -15,7 +15,7 @@ app.factory('userFactory', ['$http', function($http) {
   var processData = function (response, param){return_data[param] = response.data; console.log(response.data)}
   //Error Callback
   var errorCallback = function(response){return_data.errors = response}
-
+  console.log("here");
   return{
 
    index: function () {
@@ -47,9 +47,9 @@ app.factory('userFactory', ['$http', function($http) {
    },
 
    set_path: function(controller_name){
-      urlBase = '/api/'+controller_name+'/';
+      urlBase = '/api/json/'+controller_name+'/';
    },
 
-   return_data: return_data
+   return_dataJSON: return_data
   }
  }]);

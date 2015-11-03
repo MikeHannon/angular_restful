@@ -30,7 +30,7 @@ module.exports = (function(model_name, model_string_name, update_array) {
     }, //end of show
 
     edit: function(req,res){
-      res.json({'future':'remove path, and make this a directive'}); './../../public/'+model_string_name+'/edit.html'));
+      res.json({'future':'remove path, and make this a directive'}); //'./../../public/'+model_string_name+'/edit.html'));
     }, // end of edit
 
     new: function(req,res){

@@ -9,9 +9,7 @@ module.exports = (function(model_name, model_string_name, update_array) {
       model_name.find({}, function(err, data){
         if (err){}
         else {
-          console.log(data);
-          res.json({users: data, page: "hello"})
-          //res.sendFile(path.join(__dirname, './../../public/'+model_string_name+'/index.html'));
+          res.sendFile(path.join(__dirname, './../../public/'+model_string_name+'/index.html'));
         }
       })
     }, //end of index

@@ -1,7 +1,7 @@
 app.factory('userFactory', ['$http', function($http) {
   var that = this;
   var urlBase = '/api/';
-  var return_data = { index : {data:"index", page:"index"},      //JSON with all users
+  var return_data = { index : "index",      //JSON with all users
                       show:   "show",       //JSON read 1
                       create: "create",     //Load a view to allow creation of a new user
                       edit:   "edit",       //Load a view to allow editing of user info
@@ -47,7 +47,7 @@ app.factory('userFactory', ['$http', function($http) {
    },
 
    set_path: function(controller_name){
-      urlBase = '/api/'+controller_name+'/';
+      urlBase = '/api/json/'+controller_name+'/';
    },
 
    return_data: return_data

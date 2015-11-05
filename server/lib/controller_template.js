@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = (function(model_name, model_string_name, update_array) {
     console.log(__dirname);
-
+// 
   return {
     index : function(req, res) {
       model_name.find({}, function(err, data){

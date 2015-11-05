@@ -10,7 +10,7 @@ var app = angular.module("app", [])
   $scope.edit_button = function(id){dataFactory.edit(id);}
   $scope.delete_button = function(id){dataFactory.delete(id);}
   $scope.show_button = function(id){dataFactory.show(id);}
- }])
+}])//
 .factory('dataFactory', ['$http', function($http) {
   var that = this;
   var urlBase = '/api/';

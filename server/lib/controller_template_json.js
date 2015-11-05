@@ -13,7 +13,7 @@ module.exports = (function(model_name, model_string_name, update_array) {
         }
       })
     }, //end of index
-
+// 
     create: function(req,res){
       user = new model_name({name:'mike'}); // TEST CODE
       user.save();

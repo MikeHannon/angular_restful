@@ -10,7 +10,7 @@ app.factory('userFactoryJSON', ['$http', function($http) {
                       new:    "new",        //Stores the new user information to the DB
                       errors: "errors"      //JSON with errors if they exist
                     };
-  //Callbacks
+  //Callbacks//
   //Process Data Callback; [param] = key of return_data as a string
   var processData = function (response, param){return_data[param] = response.data; console.log(response.data)}
   //Error Callback

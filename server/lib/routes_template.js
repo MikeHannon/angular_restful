@@ -18,3 +18,4 @@ module.exports = (function(app, controller, path, json){
     app.delete('/api/json/'+path+'/:id', controller.delete);
   }
 });
+// 
